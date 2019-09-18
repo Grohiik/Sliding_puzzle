@@ -51,6 +51,8 @@
             this.lblTimer = new System.Windows.Forms.Label();
             this.TickTock = new System.Windows.Forms.Timer(this.components);
             this.movingBoxTimer = new System.Windows.Forms.Timer(this.components);
+            this.BtnOpenPicture = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -332,11 +334,26 @@
             this.movingBoxTimer.Interval = 10;
             this.movingBoxTimer.Tick += new System.EventHandler(this.MovingBoxTimer_Tick);
             // 
+            // BtnOpenPicture
+            // 
+            this.BtnOpenPicture.Location = new System.Drawing.Point(40, 10);
+            this.BtnOpenPicture.Name = "BtnOpenPicture";
+            this.BtnOpenPicture.Size = new System.Drawing.Size(170, 38);
+            this.BtnOpenPicture.TabIndex = 19;
+            this.BtnOpenPicture.Text = "Choose your own picture";
+            this.BtnOpenPicture.UseVisualStyleBackColor = true;
+            this.BtnOpenPicture.Click += new System.EventHandler(this.BtnOpenPicture_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 913);
+            this.Controls.Add(this.BtnOpenPicture);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.btnReSet);
             this.Controls.Add(this.btnStartStop);
@@ -401,6 +418,8 @@
         private System.Windows.Forms.Timer TickTock;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer movingBoxTimer;
+        private System.Windows.Forms.Button BtnOpenPicture;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

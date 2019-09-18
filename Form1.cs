@@ -311,6 +311,52 @@ namespace Sliding_puzzle
             HaveIWon();
         }
 
-        
+        private void BtnOpenPicture_Click(object sender, EventArgs e)
+        {
+            openFileDialog1 = new OpenFileDialog()
+            {
+                FileName = "Select a picture",
+                Filter = "Image Files (JPG,PNG,GIF)|*.JPG;*.PNG;*.GIF",
+                Title = "Open your picture"
+            };
+
+            openFileDialog1.ShowDialog();
+
+            ShowPicture();
+        }
+
+        private void ShowPicture()
+        {
+            int xByx = 4;
+            var imgarray = new Image[16];
+            var img = Image.FromFile(openFileDialog1.FileName);
+            for (int i = 0; i < xByx; i++)
+            {
+                for (int j = 0; j < xByx; j++)
+                {
+                    var index = i * xByx + j;
+                    imgarray[index] = new Bitmap(img.Width / xByx, img.Height / xByx);
+                    var graphics = Graphics.FromImage(imgarray[index]);
+                    graphics.DrawImage(img, new Rectangle(0, 0, img.Width / xByx, img.Height / xByx), new Rectangle(j * img.Width / xByx, i * img.Height / xByx, img.Width / xByx, img.Height / xByx), GraphicsUnit.Pixel);
+                    graphics.Dispose();
+                }
+            }
+            pictureBox1.Image = imgarray[0];
+            pictureBox2.Image = imgarray[1];
+            pictureBox3.Image = imgarray[2];
+            pictureBox4.Image = imgarray[3];
+            pictureBox5.Image = imgarray[4];
+            pictureBox6.Image = imgarray[5];
+            pictureBox7.Image = imgarray[6];
+            pictureBox8.Image = imgarray[7];
+            pictureBox9.Image = imgarray[8];
+            pictureBox10.Image = imgarray[9];
+            pictureBox11.Image = imgarray[10];
+            pictureBox12.Image = imgarray[11];
+            pictureBox13.Image = imgarray[12];
+            pictureBox14.Image = imgarray[13];
+            pictureBox15.Image = imgarray[14];
+            pictureBox16.Image = imgarray[15];
+        }
     }
 }
